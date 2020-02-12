@@ -1,0 +1,32 @@
+1. Nome dos compositores (ordem alfabética).
+	SELECT DISTINCT ?compositor WHERE {
+	    ?id a :Obra .
+	    ?id :compositor ?compositor 
+	}
+	ORDER BY ?compositor
+
+
+2. Títulos das obras do tipo "Marcha de Desfile".
+	SELECT DISTINCT ?titulo WHERE {
+	    ?id a :Obra .
+	    ?id :titulo ?titulo .
+	    ?id :tipo "Marcha de Desfile"
+	}
+
+
+3. Para cada obra, número de partituras que estão catalogadas.
+	SELECT ?obra (COUNT(?instrumento) AS ?numeroPartituras) WHERE {
+	    ?id a :Obra .
+	    ?id :titulo ?obra .
+	    ?id :éTocadaPor ?instrumento .
+	}
+	GROUP BY ?obra
+
+
+4. Título das obras com partitura para Bombo.
+	SELECT DISTINCT ?obra WHERE {
+	    ?id a :Obra .
+	    ?id :titulo ?obra .
+	    ?id :éTocadaPor ?instrumento .
+	    ?instrumento :partitura "Bombo"
+	}

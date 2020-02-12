@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pr>
+    <meta>
+        <keyname>PRC_MIEI2020_TPC2</keyname>
+        <title>Ontologias em GraphDB e Queries SPARQL</title>
+        <subtitle>Relatório inserido nos trabalhos práticos da cadeira de PRC de MIEI 2019/20</subtitle>
+        <bdate>10/02/2020</bdate>
+        <edate>12/02/2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www4.di.uminho.pt/~jcr/</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>A77045</identifier>
+            <name>Ricardo Barros Pereira</name>
+            <email>a77045@alunos.uminho.pt</email>
+            <photo path="./foto.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>Neste trabalho foi criada uma <b>ontologia</b> para o ficheiro de arquivo musical. Para isso foi utilizado o <b>Protégé</b> que permite criar ontologias a partir de uma interface gráfica.</p>
+        <p>Assim que obtido o formato da ontologia através do ficheiro <b>TTL</b>, foi criado um gerador em <b>XSLT</b> para converter todos os dados do ficheiro do arquivo musical de <b>XML</b> para <b>TTL</b>.</p>
+        <p>De seguida foi importado o ficheiro com a ontologia, preenchida com todos os dados, diretamente no <b>GraphDB</b>. As queries <b>SPARQL</b> enunciadas para este trabalho foram efetuadas com sucesso, estando disponiveis nos ficheiros abaixo.</p>
+    </abstract>
+    <deliverables>
+        <deliverable path="./arquivo-musica-digital.xml">Arquivo Musical (XML)</deliverable>
+        <deliverable path="./geradorTTL.xsl">Gerador para TTL (XSLT)</deliverable>
+        <deliverable path="./arquivo-musical.ttl">Ontologia (TTL)</deliverable>
+        <deliverable path="./queries.txt">Queries SPARQL</deliverable>
+    </deliverables>
+</pr>
