@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pr>
+    <meta>
+        <keyname>PRC_MIEI2020_TPC3</keyname>
+        <title>Aplicação para efetuar Queries SPARQL ao GraphDB</title>
+        <subtitle>Relatório inserido nos trabalhos práticos da cadeira de PRC de MIEI 2019/20</subtitle>
+        <bdate>17/02/2020</bdate>
+        <edate>19/02/2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www4.di.uminho.pt/~jcr/</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>A77045</identifier>
+            <name>Ricardo Barros Pereira</name>
+            <email>a77045@alunos.uminho.pt</email>
+            <photo path="./foto.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>Neste trabalho foi era pretendido criar uma aplicação que permitisse ao utilizador efetuar queries a qualquer um dos repositórios inseridos no <b>GraphDB</b>.</p>
+        <p>Foi criado um Servidor API de Dados em <b>NodeJS</b> para efetuar os pedidos à <b>API Rest</b> disponibilizada pelo <b>GraphDB</b>.</p>
+        <p>Para a interface disponibilizada ao utilizador foi criado um Servidor em <b>ReactJS</b>. Neste caso, é este quem gere toda a aplicação do lado do utilizador e o servidor <b>NodeJS</b> funciona como uma "ponte" que estabelece comunicação entre o <b>GraphDB</b> e o servidor de interface, mantendo assim toda a validação das interações entre os dois sistemas.</p>
+        <p>Para instalar basta exectuar o comando "npm i" em ambas diretorias e de seguida "npm start" em ambas. De preferência começar sempre por executar o Servidor API de dados.</p>
+    </abstract>
+    <deliverables>
+        <deliverable path="./query-sparql/">Servidor API de Dados (NodeJS)</deliverable>
+        <deliverable path="./query-sparql-ui/">Servidor Interface (ReactJS)</deliverable>
+    </deliverables>
+</pr>
