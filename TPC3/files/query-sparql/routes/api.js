@@ -9,10 +9,6 @@ PREFIX noInferences: <http://www.ontotext.com/explicit>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 `
 
-const encode = (prefixes,query) => {
-    return encodeURIComponent(prefixes + query)
-}
-
 router.get('/', function(req, res) {
     axios.get("http://localhost:7200/repositories") // GET Repository
         .then(dados => {
@@ -28,14 +24,12 @@ router.get('/', function(req, res) {
 router.get('/query', function(req, res) {
     let repositório = req.query.rep
     let query = req.query.query
-    let preQuery = 'select ?n where {?n rdf:type owl:Class.} limit 1'
     let link = `http://localhost:7200/repositories/${repositório}?query=`
 
-    axios.get(link + encode(prefix,preQuery)) // GET URI of chosen repository
+    axios.get(`http://localhost:7200/repositories/${repositório}/namespaces`)
         .then(dados => {
-            let uri = '<' + dados.data.results.bindings[0].n.value.split("#")[0] + '#>'
-            let prefixes = prefix + 'PREFIX : ' + uri
-            axios.get(link + encode(prefixes,query)) // GET data with query
+            let prefixes = prefix + 'PREFIX : <' + dados.data.results.bindings[0].namespace.value + '>'
+            axios.get(link + encodeURIComponent(prefixes + query))
                 .then(dados => {
                     data = []
                     for(let i = 0; i < dados.data.results.bindings.length; i++)
