@@ -1,0 +1,14 @@
+select distinct ?name ?gender ?birthDate ?birthPlace ?deathDate ?abstract where {
+	?p a dbo:Swimmer .
+	?p a dbo:Person .
+	?p foaf:name ?name .
+	?p foaf:gender ?gender .
+	?p dbo:birthDate ?birthDate .
+	OPTIONAL {
+		?p dbo:birthPlace ?bP.
+		?bP dbp:postTown ?birthPlace.
+		?p dbo:deathDate ?deathDate.
+		?p dbo:abstract ?abstract.
+		FILTER (langMatches(lang(?abstract),"en"))
+	}
+} ORDER BY ?name

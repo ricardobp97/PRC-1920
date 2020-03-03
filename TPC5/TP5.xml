@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pr>
+    <meta>
+        <keyname>PRC_MIEI2020_TPC5</keyname>
+        <title>Dataset de Nadadores da DBPedia</title>
+        <subtitle>Relatório inserido nos trabalhos práticos da cadeira de PRC de MIEI 2019/20</subtitle>
+        <bdate>02/03/2020</bdate>
+        <edate>03/03/2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www4.di.uminho.pt/~jcr/</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>A77045</identifier>
+            <name>Ricardo Barros Pereira</name>
+            <email>a77045@alunos.uminho.pt</email>
+            <photo path="./foto.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>Neste trabalho era pretendido criar um <b>Dataset</b> de Nadadores, a partir da informação disponivel na <b>DBPedia</b>.</p>
+        <p>Foi então retirada toda a informação através da <i>query</i> disponibilizada abaixo. Os dados foram retirados em formato <b>JSON</b>.</p>
+        <p>Contudo, foi preciso ainda tratar estes dados pois continham nadadores repetidos e alguns elementos em formatos não desejados. Para isso foi criada uma <b>script</b> em <b>JavaScript</b> para normalizar o <b>dataset</b>.</p>
+        <p>Abaixo é disponibilizado o <b>Dataset</b> final, mas também o primeiro retirado diretamente da <b>DBPedia</b> e a <b>script</b> para o seu tratamento e transformação final.</p>
+    </abstract>
+    <deliverables>
+        <deliverable path="./Querie.sparql">Query SPARQL</deliverable>
+        <deliverable path="./swimmers.json">JSON Obtido</deliverable>
+        <deliverable path="./script.js">Script para tratamento do JSON</deliverable>
+        <deliverable path="./swimmers_dataset.json">Dataset Final</deliverable>
+    </deliverables>
+</pr>
