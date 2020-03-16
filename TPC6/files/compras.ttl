@@ -1,0 +1,336 @@
+@prefix : <http://www.semanticweb.org/bosch/ontologies/2020/2/compras#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/bosch/ontologies/2020/2/compras> .
+
+<http://www.semanticweb.org/bosch/ontologies/2020/2/compras> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#compra
+:compra rdf:type owl:ObjectProperty ;
+        owl:inverseOf :éCompradoPor ;
+        rdfs:domain :Cliente ;
+        rdfs:range :Produto .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#vende
+:vende rdf:type owl:ObjectProperty ;
+       owl:inverseOf :éVendidoPor ;
+       rdfs:domain :Loja ;
+       rdfs:range :Produto .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#éCompradoPor
+:éCompradoPor rdf:type owl:ObjectProperty ;
+              rdfs:domain :Produto ;
+              rdfs:range :Cliente .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#éVendidoPor
+:éVendidoPor rdf:type owl:ObjectProperty ;
+             rdfs:domain :Produto ;
+             rdfs:range :Loja .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#código
+:código rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Produto .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Cliente .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Cliente ,
+                  :Loja .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#Cliente
+:Cliente rdf:type owl:Class ;
+         rdfs:subClassOf :CompraVenda .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#CompraVenda
+:CompraVenda rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#Loja
+:Loja rdf:type owl:Class ;
+      rdfs:subClassOf :CompraVenda .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#LojaGrande
+:LojaGrande rdf:type owl:Class ;
+            rdfs:subClassOf :Loja .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#Produto
+:Produto rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#arroz
+:arroz rdf:type owl:NamedIndividual ,
+                :Produto ;
+       :éVendidoPor :continente ,
+                    :económico ,
+                    :lidl ,
+                    :pingo-doce ;
+       :código 987345623427 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#batatas
+:batatas rdf:type owl:NamedIndividual ,
+                  :Produto ;
+         :éVendidoPor :continente ,
+                      :lidl ,
+                      :mini-preço ;
+         :código 45890348235 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#bolachas
+:bolachas rdf:type owl:NamedIndividual ,
+                   :Produto ;
+          :éVendidoPor :continente ,
+                       :económico ,
+                       :mini-preço ,
+                       :pingo-doce ;
+          :código 54350214823 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#bolo
+:bolo rdf:type owl:NamedIndividual ,
+               :Produto ;
+      :éVendidoPor :económico ,
+                   :pingo-doce ;
+      :código 094328457231 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#c1
+:c1 rdf:type owl:NamedIndividual ,
+             :Cliente ;
+    :compra :arroz ,
+            :carne ,
+            :cereais ,
+            :fruta ,
+            :shampoo ,
+            :água ;
+    :email "ricardo@hotmail.com" ;
+    :nome "Ricardo Pereira" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#c2
+:c2 rdf:type owl:NamedIndividual ,
+             :Cliente ;
+    :compra :bolachas ,
+            :bolo ,
+            :pão ,
+            :queijo ,
+            :sumo ;
+    :email "bruno@gmail.com" ;
+    :nome "Bruno Sousa" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#c3
+:c3 rdf:type owl:NamedIndividual ,
+             :Cliente ;
+    :compra :batatas ,
+            :peixe ,
+            :sal ,
+            :tomate ,
+            :vinho ;
+    :email "rafael@gmail.com" ;
+    :nome "Rafael Silva" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#c4
+:c4 rdf:type owl:NamedIndividual ,
+             :Cliente ;
+    :compra :café ,
+            :fruta ,
+            :massa ,
+            :sumo ,
+            :vinho ,
+            :água ;
+    :email "duarte@gmail.com" ;
+    :nome "Duarte Freitas" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#c5
+:c5 rdf:type owl:NamedIndividual ,
+             :Cliente ;
+    :compra :arroz ,
+            :cereais ,
+            :fruta ,
+            :massa ,
+            :shampoo ,
+            :vinho ;
+    :email "jcr@uminho.pt" ;
+    :nome "José Ramalho" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#café
+:café rdf:type owl:NamedIndividual ,
+               :Produto ;
+      :éVendidoPor :económico ;
+      :código 743204273842 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#carne
+:carne rdf:type owl:NamedIndividual ,
+                :Produto ;
+       :éVendidoPor :continente ,
+                    :pingo-doce ;
+       :código 74382013782 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#cereais
+:cereais rdf:type owl:NamedIndividual ,
+                  :Produto ;
+         :éVendidoPor :lidl ,
+                      :mini-preço ;
+         :código 4025784572 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#continente
+:continente rdf:type owl:NamedIndividual ,
+                     :Loja ;
+            :nome "Continente" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#económico
+:económico rdf:type owl:NamedIndividual ,
+                    :Loja ;
+           :nome "Económico" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#fruta
+:fruta rdf:type owl:NamedIndividual ,
+                :Produto ;
+       :éVendidoPor :lidl ;
+       :código 58025734134 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#lidl
+:lidl rdf:type owl:NamedIndividual ,
+               :Loja ;
+      :nome "Lidl" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#massa
+:massa rdf:type owl:NamedIndividual ,
+                :Produto ;
+       :éVendidoPor :continente ,
+                    :económico ,
+                    :lidl ,
+                    :pingo-doce ;
+       :código 32442533478 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#mini-preço
+:mini-preço rdf:type owl:NamedIndividual ,
+                     :Loja ;
+            :nome "Minipreço" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#peixe
+:peixe rdf:type owl:NamedIndividual ,
+                :Produto ;
+       :éVendidoPor :continente ,
+                    :pingo-doce ;
+       :código 7584302812 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#pingo-doce
+:pingo-doce rdf:type owl:NamedIndividual ,
+                     :Loja ;
+            :nome "Pingo Doce" .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#pão
+:pão rdf:type owl:NamedIndividual ,
+              :Produto ;
+     :éVendidoPor :lidl ;
+     :código 53450274823 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#queijo
+:queijo rdf:type owl:NamedIndividual ,
+                 :Produto ;
+        :éVendidoPor :económico ;
+        :código 043757283442 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#sal
+:sal rdf:type owl:NamedIndividual ,
+              :Produto ;
+     :éVendidoPor :mini-preço ;
+     :código 049273578242 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#shampoo
+:shampoo rdf:type owl:NamedIndividual ,
+                  :Produto ;
+         :éVendidoPor :económico ,
+                      :mini-preço ;
+         :código 543057384724 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#sumo
+:sumo rdf:type owl:NamedIndividual ,
+               :Produto ;
+      :éVendidoPor :continente ,
+                   :lidl ,
+                   :pingo-doce ;
+      :código 4583490283742 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#tomate
+:tomate rdf:type owl:NamedIndividual ,
+                 :Produto ;
+        :éVendidoPor :económico ,
+                     :pingo-doce ;
+        :código 543785043271084 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#vinho
+:vinho rdf:type owl:NamedIndividual ,
+                :Produto ;
+       :éVendidoPor :continente ,
+                    :lidl ,
+                    :mini-preço ,
+                    :pingo-doce ;
+       :código 5893042343 .
+
+
+###  http://www.semanticweb.org/bosch/ontologies/2020/2/compras#água
+:água rdf:type owl:NamedIndividual ,
+               :Produto ;
+      :éVendidoPor :continente ,
+                   :económico ,
+                   :mini-preço ,
+                   :pingo-doce ;
+      :código 54307273482 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

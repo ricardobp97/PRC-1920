@@ -1,0 +1,27 @@
+1. Que lojas vendem o produto A? A => sumo
+	SELECT ?Loja WHERE {
+	    ?id rdf:type :Loja .
+	    ?id :vende :sumo .
+	    ?id :nome ?Loja .
+	}
+
+2. Que produtos são comprados pelo cliente X?
+	- Por nome:
+		SELECT ?Produto WHERE {
+		    ?id rdf:type :Cliente .
+		    ?id :nome 'Ricardo Pereira' .
+		    ?id :compra ?Produto .
+		}
+	- Por id:
+		SELECT ?Produto WHERE {
+		    :c1 :compra ?Produto
+		}
+
+3. Quem são os potenciais clientes da loja Y?
+	SELECT DISTINCT ?cliente WHERE {
+	    ?l rdf:type :Loja .
+	    ?l :nome 'Continente' .
+	    ?l :vende ?produto .
+	    ?produto :éCompradoPor ?id .
+	    ?id :nome ?cliente .
+	}
