@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pr>
+    <meta>
+        <keyname>PRC_MIEI2020_TPC7</keyname>
+        <title>Criação e Povoamento de Ontologia Cinema</title>
+        <subtitle>Relatório inserido nos trabalhos práticos da cadeira de PRC de MIEI 2019/20</subtitle>
+        <bdate>16/03/2020</bdate>
+        <edate>23/03/2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www4.di.uminho.pt/~jcr/</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>A77045</identifier>
+            <name>Ricardo Barros Pereira</name>
+            <email>a77045@alunos.uminho.pt</email>
+            <photo path="./foto.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>Neste trabalho era pretendido que fosse reunida uma boa quantidade de dados para povoar a Ontologia de Cinema. Estes dados foram obtidos através da API disponibilizada pela <b>Movies Database</b>.</p>
+        <p>Depois de conseguir reunir os dados necessários para preencher a ontologia, foi necessário escrever os triplos no formato <b>Turtle</b> para que pudessemos importar os dados no GraphDB.</p>
+        <p>Isto foi conseguido através da criação de uma script em <b>Node.js</b> que preparou os triplos em formato <b>turtle</b> para que estes fossem inseridos na ontologia.</p>
+    </abstract>
+    <deliverables>
+        <deliverable path="./get_data/movies.json">Dataset Construído</deliverable>
+        <deliverable path="./get_data/get_data.js">Script NodeJS</deliverable>
+        <deliverable path="./cinema.ttl">Ontologia Final</deliverable>
+    </deliverables>
+</pr>
