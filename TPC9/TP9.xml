@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pr>
+    <meta>
+        <keyname>PRC_MIEI2020_TPC9</keyname>
+        <title>WebApp e API</title>
+        <subtitle>Relatório inserido nos trabalhos práticos da cadeira de PRC de MIEI 2019/20</subtitle>
+        <bdate>30/03/2020</bdate>
+        <edate>20/04/2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www4.di.uminho.pt/~jcr/</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>A77045</identifier>
+            <name>Ricardo Barros Pereira</name>
+            <email>a77045@alunos.uminho.pt</email>
+            <photo path="./foto.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>Neste trabalho de casa era pretendido que fosse adicionado à App Web de cinema a página de Filme individual, e que ela fosse lançada ao clicar num dos filmes da lista de filmes apresentada.</p>
+    </abstract>
+    <deliverables>
+        <deliverable path="./cinemateca/">API Cinema</deliverable>
+        <deliverable path="./cinemateca-ui/">Web App Cinema</deliverable>
+    </deliverables>
+</pr>
