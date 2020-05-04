@@ -1,0 +1,57 @@
+Tios:
+	SELECT ?id ?uncle WHERE {
+	    :I1 :hasParent/:hasSibling ?id .
+	    ?id :name ?uncle .
+	}
+
+	CONSTRUCT {
+		?id :hasUncle ?u .
+	}
+	WHERE {
+		?id rdf:type :Person .
+		?id :hasParent/:hasSibling ?u .
+	}
+
+Primos:
+	SELECT ?id ?cousin WHERE {
+	    :I1 :hasParent/:hasSibling/:hasChild ?id .
+	    ?id :name ?cousin .
+	    filter(?id != :I1) .
+	}
+
+	CONSTRUCT {
+		?id :hasCousin ?cousin .
+	}
+	WHERE {
+		?id rdf:type :Person .
+		?id :hasParent/:hasSibling/:hasChild ?cousin .
+	    filter(?id != ?cousin) .
+	}
+
+Ancestrais:
+	SELECT ?id ?ancestral WHERE {
+	    :I1 :hasParent+ ?id .
+	    ?id :name ?ancestral .
+	}
+
+	CONSTRUCT {
+		?id :hasAncestor ?ancestral .
+	}
+	WHERE {
+		?id rdf:type :Person .
+		?id :hasParent+ ?ancestral .
+	}
+
+Descendentes:
+	SELECT ?id ?descendent WHERE {
+	    :I1 :hasChild+ ?id .
+	    ?id :name ?descendent .
+	}
+
+	CONSTRUCT {
+		?id :hasDescendent ?descendent .
+	}
+	WHERE {
+		?id rdf:type :Person .
+		?id :hasChild+ ?descendent .
+	}

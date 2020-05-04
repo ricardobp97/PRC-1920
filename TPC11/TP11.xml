@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pr>
+    <meta>
+        <keyname>PRC_MIEI2020_TPC11</keyname>
+        <title>WebApp e API Cinemateca</title>
+        <subtitle>Relatório inserido nos trabalhos práticos da cadeira de PRC de MIEI 2019/20</subtitle>
+        <bdate>27/04/2020</bdate>
+        <edate>04/05/2020</edate>
+        <supervisor>
+            <name>José Carlos Ramalho</name>
+            <email>jcr@di.uminho.pt</email>
+            <homepage>http://www4.di.uminho.pt/~jcr/</homepage>
+        </supervisor>
+    </meta>
+    <workteam>
+        <member>
+            <identifier>A77045</identifier>
+            <name>Ricardo Barros Pereira</name>
+            <email>a77045@alunos.uminho.pt</email>
+            <photo path="./foto.jpg"/>
+        </member>
+    </workteam>
+    <abstract>
+        <p>Neste trabalho era pretendido que fossem efetuadas queries sparql para obter as relacões sobre os tios, primos, ancestrais, descendentes, cunhados e sogros de uma pessoa.</p>
+        <p>As queries que respondem e criam as relações na ontologia foram efetuadas para todos os cs membros pedidos menos para sogros e cunhados pois com os dados atuais da ontologia não conseguimos induzir esse tipo de informação, pelo menos, garantido que seria verdadeira.</p>
+    </abstract>
+    <deliverables>
+        <deliverable path="./Queries.txt/">Queries</deliverable>
+    </deliverables>
+</pr>
